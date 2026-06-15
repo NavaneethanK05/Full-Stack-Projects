@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0F1115;
+  --color-surface: #1A1D24;
+  --color-surface-hi: #232730;
+  --color-border: #2C313C;
+  --color-text: #E7E9EE;
+  --color-text-dim: #9AA1AE;
+  --color-mint: #6EE7B7;
+  --color-mint-dim: #3EA37A;
+  --color-amber: #FBBF24;
+  --color-coral: #F87171;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(110, 231, 183, 0.08), transparent 40%),
+    radial-gradient(circle at 85% 100%, rgba(251, 191, 36, 0.06), transparent 40%);
+}
+
+/* Perforated "ticket stub" divider used on link cards */
+.tag-notch {
+  position: relative;
+}
+.tag-notch::before,
+.tag-notch::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: var(--color-ink);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.tag-notch::before { left: -7px; }
+.tag-notch::after { right: -7px; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 4px; }
+
+:focus-visible {
+  outline: 2px solid var(--color-mint);
+  outline-offset: 2px;
+}
